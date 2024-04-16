@@ -24,9 +24,12 @@ class Quiz {
         }
       }
 
+    
+
     checkAnswer(answer){
-        if ( answer === this.currentQuestionIndex ){
-            this.correctAnswers + 1;
+        
+        if ( answer === this.getQuestion ){
+            this.correctAnswers++;
         }
 
     }
@@ -38,4 +41,22 @@ class Quiz {
         return true
        }
     }
+    filterQuestionByDifficulty(diificulty){
+        
+        let questionsDificulty = questions.filter((eachQuestion){ 
+
+            
+            if ()
+            
+            
+        }
+    )
+
+
+    }
+
+    averageDificulty(){
+
+    }   
+
     }
