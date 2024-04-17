@@ -27,13 +27,13 @@ class Quiz {
     
 
     checkAnswer(answer){
-        
-        if ( answer === this.getQuestion ){
+        let preguntaActual = this.getQuestion()
+        if ( answer === preguntaActual.answer ){
             this.correctAnswers++;
         }
-
+    
     }
-
+    
     hasEnded(){
        if (this.currentQuestionIndex < this.questions.length){
         return false
@@ -41,22 +41,37 @@ class Quiz {
         return true
        }
     }
-    filterQuestionByDifficulty(diificulty){
-        
-        let questionsDificulty = questions.filter((eachQuestion){ 
+    filterQuestionsByDifficulty(difficulty){
+        let questionDifficulty = this.questions;
+
+        console.log (questionDifficulty);
+
+            if (difficulty >=1 && difficulty <=3 ){
+                let questionDifficultyArr = questionDifficulty.filter(eachQuestion => {
+                    
+                    if (eachQuestion.difficulty === difficulty ){
+                        return true 
+                    } else {
+                        return false
+                    }
+                
+                })
+                console.log(questionDifficultyArr)
+                this.questions = questionDifficultyArr 
+            } else {};
 
             
-            if ()
-            
-            
-        }
-    )
-
-
     }
 
-    averageDificulty(){
+    averageDifficulty(){
+        let averageByDifficulty = this.questions.reduce((acc, pregunta) =>{
+            return acc + pregunta.difficulty;
+        }, 0)
+          return averageByDifficulty / this.questions.length;
 
+       
     }   
-
-    }
+    
+}
+    
+  
