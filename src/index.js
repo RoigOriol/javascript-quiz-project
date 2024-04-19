@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       3
     ),
     // Add more questions here
+    new Question("Cuál es la de edad de Jorge", ["31, No no es mi edad", "40, No, no es mi edad", "25, No, no es mi edad", "62, No, no es mi edad"], "40, No, no es mi edad", 5)
   ];
   const quizDuration = 120; // 120 seconds (2 minutes)
 
